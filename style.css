@@ -29,28 +29,123 @@ section {
   background-color: orange;
 }
 
-/* Mobile First */
-
 header, footer {
-  flex: 1;
   background-color: red;
   text-align: center;
 }
 
+/* Mobile First */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+header, footer {
+  flex: 1;
+}
+
 article {
-  flex: 18;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-aside, section {
-  flex: 1;
+.section-container {
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 480px) {
-
+@media (min-width: 580px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  header, footer {
+    flex: 1;
+  }
+  article {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  aside {
+    flex: 1;
+  }
+  .section-container {
+    flex: 2;
+    display: flex;
+    flex-flow: column;
+  }
+  /* Some play with order for tablet-display */
+  header {
+    order: -1;
+  }
+  aside {
+    order: 4;
+  }
+  .section-container {
+    order: 0;
+  }
+  #one {
+    order: 3;
+  }
+  #two {
+    order: 2;
+  }
+  #three {
+    order: 1;
+  }
+  footer {
+    order: 5;
+  }
 }
 
-@media (min-width: 640px) {
-  
+@media (min-width: 800px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  article {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  aside {
+    flex: 1;
+  }
+  .section-container {
+    flex: 4;
+    display: flex;
+    flex-flow: row;
+  }
+  section {
+    flex: 1;
+    height: 50vh;
+  }
+  /* Some play with order for PC-display */
+  header {
+    order: -1;
+  }
+  aside {
+    order: 0;
+  }
+  .section-container {
+    order: 1;
+  }
+  #one {
+    order: 2;
+  }
+  #two {
+    order: 3;
+  }
+  #three {
+    order: 4;
+  }
+  footer {
+    order: 5;
+  }
 }
